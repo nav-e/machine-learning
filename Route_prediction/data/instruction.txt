@@ -1,0 +1,2 @@
+Download the training data and keep it in this folder. Removed presently in order to push the code. Link for the data will be made available in the repository readme.
+Training data size: 533.6MB (ZIP format) and 1.9 GB after extracting.
