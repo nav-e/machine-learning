@@ -1,0 +1,1 @@
+This module helps in filtering the notifiation in order to not spam the users. This can be integrated with the notification system application, that might be added to the GreenNav repository. This machine learning package can be used by the organisation later, development of which will be continued once the confirmation is obtained after the discussion with the mentor.
