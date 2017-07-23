@@ -4,7 +4,7 @@ A research repository for source code that implements machine learning methods t
 Current Contents:
 ### 1. Fuel prediction:
 
-Directory: Fuel_prediction
+Directory: Fuel_prediction <br>
 This module has three different functionalities namely:
 
 1. Getting the Energy consumption
