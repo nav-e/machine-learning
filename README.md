@@ -35,16 +35,13 @@ This module helps to predict the route that the car will take based on the previ
 Directory: Driving_simulator<br>
 A simulator for cars to learn to drive themselves. Can be used for data generation. 
 Still a work in progress.
-Estimated time: 10 days.
+Estimated time: 10 days
 
 ### 5. Smart Notification:
 
 Directory: Smart_notification<br>
-This module helps in filtering the notifiation in order to not spam the users. This can be integrated with the notification system application that might be added to the GreenNav repository. This machine learning package can be used by the organisation later, development of which will be continued once the confirmation is obtained after the discussion with the mentor.
-Estimated time: 5 days.
+This module helps in filtering the notifiation in order to not spam the users. This can be integrated with the notification system application that might be added to the GreenNav repository. This machine learning package can be used by the organisation later.
 
 ### Planned work to do:
 
 1. Complete the driving simulation module.
-2. Complete the smart notification module(Subject to approval)
-3. Integration of all the modules to arrive at a final estimated fuel prediction considering various aspects frome several modules.
