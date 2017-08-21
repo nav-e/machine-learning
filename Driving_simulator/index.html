@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<title>Bot learn to drive</title>
+		
+		<link href="style.css" rel="stylesheet" />
+		<link href='http://fonts.googleapis.com/css?family=Orbitron:700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Arapey' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="projects.css" />
+		<script src="training.js"></script>
+       		<script src="widget.js"></script>
+		<script src="operate.js"></script>
+		<script src="controls.js"></script>
+		<script>
+			var ga = ga || function () {};
+			var neuralCarSettingsObject = {
+			};
+			function startup () {
+				document.getElementById("settings").appendChild(GREENNAV.settings.init(neuralCarSettingsObject, 'Start Simulation', function (settings) {
+					if (typeof ga === "function") {
+						ga("send", "event", "neuralcar", "neuralcar-2-simulation-start");
+					}
+					GREENNAV.neuralCar = new GREENNAV.NeuralCar(document.getElementById('backCanvas'), document.getElementById('frontCanvas'), document.getElementById("console"), settings);
+					var settingsDiv = document.getElementById("settings");
+					settingsDiv.parentNode.removeChild(settingsDiv);
+					document.getElementById('runSpeed-input').value = parseFloat(settings.runSpeed);
+					var m = document.getElementById('maxRunspeed-input');
+					if (settings.maxRunspeed) {
+						m.innerHTML = "On";
+						m.classList.add("on");
+						m.eff = true;
+					}
+					m.addEventListener("click", function (event) {
+						if (event.target.eff) {
+							event.target.eff = false;
+							event.target.classList.remove("on");
+							event.target.innerHTML = "Off";
+							GREENNAV.neuralCar.getSettings().maxRunspeed = false;
+						} else {
+							event.target.eff = true;
+							event.target.classList.add("on");
+							event.target.innerHTML = "On";
+							GREENNAV.neuralCar.getSettings().maxRunspeed = true;
+						}
+					});
+					
+					var m = document.getElementById('collision-input');
+					if (settings.collision) {
+						m.innerHTML = "On";
+						m.classList.add("on");
+						m.col = true;
+					}
+					m.addEventListener("click", function (event) {
+						if (event.target.col) {
+							event.target.col = false;
+							event.target.classList.remove("on");
+							event.target.innerHTML = "Off";
+							GREENNAV.neuralCar.getSettings().collision = false;
+						} else {
+							event.target.col = true;
+							event.target.classList.add("on");
+							event.target.innerHTML = "On";
+							GREENNAV.neuralCar.getSettings().collision = true;
+						}
+					});
+				}));
+			}
+		</script>
+	</head>
+	<body>
+		
+		<center>
+			<div class="wrapper">
+				<canvas id="backCanvas">Your browser is not supported, please upgrade to a more modern browser.</canvas>
+				<canvas style="position:absolute; left:0; top:0;" id="frontCanvas">Your browser is not supported, please upgrade to a more modern browser.</canvas>
+			</div>
+		</center>
+		<div id="console">
+			Logs:
+			<br/><br/>
+		</div>
+		<div id="changeSettings">
+			<input id="runSpeed-input" class="setting-input" style="float:none; margin-top:5px;" value="1">
+			<div class="settings-goButton runSpeed-button" onclick="GREENNAV.neuralCar.runSpeed = parseFloat(document.getElementById('runSpeed-input').value) || 1; GREENNAV.neuralCar.console.log('New runspeed: ' + GREENNAV.neuralCar.runSpeed)">Set speed</div>
+			
+			<div style="clear:both;"></div>
+			Collision Control: <div id="collision-input" class="setting-input-switch runSpeed-switch">Off</div>
+		</div>
+		<div id="settings">
+		</div>
+		<div style="clear:both;"></div>
+		<script type="text/javascript">
+			startup();
+		</script>
+	</body>
+</html>
