@@ -33,9 +33,7 @@ This module helps to predict the route that the car will take based on the previ
 ### 5. Driving Simulator:
 
 Directory: Driving_simulator<br>
-A simulator for cars to learn to drive themselves. Can be used for data generation. 
-Still a work in progress.
-Estimated time: 10 days
+A simulator for vehicles to learn how to drive from themselves. Can be used for data generation.
 
 ### 5. Smart Notification:
 
@@ -44,4 +42,4 @@ This module helps in filtering the notifiation in order to not spam the users. T
 
 ### Planned work to do:
 
-1. Complete the driving simulation module.
+1. All modules planned and discussed completed.
