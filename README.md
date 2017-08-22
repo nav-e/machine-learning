@@ -43,3 +43,4 @@ This module helps in filtering the notifiation in order to not spam the users. T
 ### Planned work to do:
 
 1. All modules planned and discussed completed.
+2. Planning to design a website to showcase all the modules in action for the final submission.
